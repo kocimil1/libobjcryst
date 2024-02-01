@@ -1801,13 +1801,13 @@ if(S==26){
             break;
         }
         prevBestCost = runBestCost;
-#ifdef 0
-string name = "res/loglikelyhood_" + to_string((int)mRun) + ".txt";
-        ofstream file(name, std::ios::app);
-        file << runBestCost << std::endl;
-        file.close();
+// #ifdef 0
+// string name = "res/loglikelyhood_" + to_string((int)mRun) + ".txt";
+//         ofstream file(name, std::ios::app);
+//         file << runBestCost << std::endl;
+//         file.close();
+// #endif
     }
-#endif
     delete[] x;
     delete[] v;
     delete[] m;
@@ -1927,12 +1927,12 @@ bool MonteCarloObj::converged(double prevBestCost, double *x, double *v, int sam
         double sumOfSpeeds = 0;
         for (int i = 0; i < NbFreePar * int(mParticles); i++)
             sumOfSpeeds = sumOfSpeeds + abs(v[i]);
-#ifdef 0
-string name = "res/speed_" + to_string((int)mRun) + ".txt";
-        ofstream file(name, std::ios::app);
-        file << sumOfSpeeds << std::endl;
-        file.close();
-#endif
+// #ifdef 0
+// string name = "res/speed_" + to_string((int)mRun) + ".txt";
+//         ofstream file(name, std::ios::app);
+//         file << sumOfSpeeds << std::endl;
+//         file.close();
+// #endif
         //if (sumOfSpeeds/mParticles > 0.01)
             return false;
         break;
